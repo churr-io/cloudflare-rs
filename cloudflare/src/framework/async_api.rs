@@ -30,7 +30,7 @@ impl Client {
         config: HttpApiClientConfig,
         environment: Environment,
     ) -> Result<Client, crate::framework::Error> {
-        let mut builder = reqwest::Client::builder().default_headers(config.default_headers);
+        let mut builder = reqwest::Client::builder().default_headers(config.default_headers).http1_only();
 
         #[cfg(not(target_arch = "wasm32"))]
         {
