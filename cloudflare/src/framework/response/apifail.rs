@@ -8,7 +8,7 @@ use std::fmt::{self, Debug, Write as _};
 /// It does NOT compare the `other` values.
 #[derive(Deserialize, Serialize, Debug)]
 pub struct ApiError {
-    pub code: u16,
+    pub code: u64,
     pub message: String,
     #[serde(flatten)]
     pub other: HashMap<String, JValue>,
